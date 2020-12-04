@@ -1,5 +1,7 @@
+# CMAP | Mary Weber | 12/4/2020
+
 #POPULATION DATA AVAILABLE VIA API FOR 2000 and 2010; excel file for 1990
-#look into using get_estimates for 1995, 2005, 2015 populations; data from census bureau
+#look into using get_estimates for 1995, 2005, 2015 populations
 library(tidycensus)
 library(tidyverse)
 library(readxl)
@@ -10,8 +12,6 @@ df_2010 <- load_variables(2010, "sf1")
 year <- 2010
 year2 <- 2000
 counties = list(IL=c(31, 43, 89, 93, 97, 111, 197, 7, 37, 63, 91, 99, 103, 141, 201), IN=c(89,91,127), WI=c(59, 101, 127)) 
-
-
 
 #2000 HH POP DATA 
 pop_tables2 <- c("PCT0130")
@@ -79,4 +79,6 @@ pop_2000 <- df[[1]]
 pop_2000$Year <- 2000
 pop_2010 <- df[[2]]
 pop_2010$Year <- 2010
+
+#rm(list = ls())
 
